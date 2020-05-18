@@ -1,0 +1,65 @@
+<!doctype html>
+<title>USNG Damage Viz</title>
+<head>
+<meta charset="UTF-8">
+
+
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+<!-- <link rel=stylesheet type=text/css href="static/style.css">  -->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<!-- bokeh stuff -->
+<script src="http://cdn.pydata.org/bokeh/release/bokeh-2.0.2.min.js"></script>
+<script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-2.0.2.min.js"></script>
+<script type="text/javascript"> Bokeh.set_log_level("info"); </script>
+
+<!-- bokeh plot script -->
+{% if resultstatus == true  %}
+{{ plot_script | safe }}
+{% endif %}
+
+</head>
+
+<body>
+<script type="text/javascript" color="0,100,200" opacity="5" src="http://www.freecodeformat.com/js/canvas-nest.min.js"></script>
+<div class="container">
+<h1>
+    <a href="https://patentanalyticsapp.herokuapp.com/">USNG Geospatial Building Damage Assessment <sup>beta*</sup></a>
+</h1>
+
+    <div id="container_right">
+        {% if error %}
+        <h2><font color="red">{{ error }}</font></h2>
+        {% endif %}
+    </div>
+
+    <div style="width:1024; margin:0 auto">
+        {% if resultstatus == true %}
+        {{ plot_div | safe }}
+        {% endif %}
+    </div>
+    
+    <div >
+    <img src="{{url_for('static', filename='uploads/after.png')}}" style="width:500px; height:500px"/>
+    <img src="{{url_for('static', filename='processed/vizdamage.png')}}" style="width:500px; height:500px"/>
+    </div>
+
+    <div class="container2" style="margin:0 auto; text-align: center">
+        <p></p>
+        <p>Estimated financial cost of the damage is provided above according to USNG coordinates. Left image is uploaded disaster image, right image is damage predicted by model on a pixel-by-pixel level.</p>
+        <p>*This beta is intended for testing purposes only. Any use of this application without permission is strictly prohibited.   </p>
+    </div>
+
+
+</div>
+
+</body>
+
