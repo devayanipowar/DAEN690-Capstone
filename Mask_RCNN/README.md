@@ -48,7 +48,7 @@ To train or test on MS COCO, you'll also need:
 * ([model.py](mrcnn/model.py), [utils.py](mrcnn/utils.py), [config.py](mrcnn/config.py)): These files contain the main Mask RCNN implementation.
 
 
-* [test_images.ipynb](samples/coco/inspect_data.ipynb). This notebook visualizes the test detection and metrics evaluation.
+* [test_images.ipynb](samples/coco/test_images.ipynb). This notebook visualizes the test detection and metrics evaluation.
 
 
 # Training on MS COCO

@@ -202,7 +202,7 @@ In house model attempt at the Xview2 challenge. View folder for more information
 * ([model.py](Mask_RCNN/mrcnn/model.py), [utils.py](Mask_RCNN/mrcnn/utils.py), [config.py](Mask_RCNN/mrcnn/config.py)): These files contain the  Mask R-CNN implementation.
 
 
-* [test_images.ipynb](Mask_RCNN/samples/coco/inspect_data.ipynb). This notebook visualizes the test detection and metrics evaluation.
+* [test_images.ipynb](Mask_RCNN/samples/coco/test_images.ipynb). This notebook visualizes the test detection and metrics evaluation.
 
 
 ## Training on MS COCO
