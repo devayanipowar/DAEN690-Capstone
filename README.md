@@ -194,8 +194,54 @@ In house model attempt at the Xview2 challenge. View folder for more information
 <details>
     <summary> <b>Mask RCNN</b> </summary>
 
+## Notebooks
+* [debug.ipynb](Mask_RCNN/samples/debug.ipynb) This file is used to understand the mask generation.
+
+* [inspect_damage_assessment.ipynb](Mask_RCNN/samples/inspect_damage_assessment.ipynb) This notebook combines the pre- & post- images and creates damage annotations
+
+* ([model.py](Mask_RCNN/mrcnn/model.py), [utils.py](Mask_RCNN/mrcnn/utils.py), [config.py](Mask_RCNN/mrcnn/config.py)): These files contain the  Mask R-CNN implementation.
+
+
+* [test_images.ipynb](Mask_RCNN/samples/coco/inspect_data.ipynb). This notebook visualizes the test detection and metrics evaluation.
+
+
+## Training on MS COCO
+
+We train the initial model for building detection using the pretrained weights and use the updated weight for damage level detection.
+
+Training code is in `samples/coco.py`. You can import this
+module in Jupyter notebook (see the provided notebooks for examples) or you
+can run it directly from the command line as such:
+
+```
+# Continue training a model that you had trained earlier
+python3 samples/coco/coco.py train --dataset=/path/to/coco/ --model=/path/to/weights.h5
+
+# Continue training the last model you trained. This will find
+# the last trained weights in the model directory.
+python3 samples/coco/coco.py train --dataset=/path/to/coco/ --model=last
+```
+
+The training schedule, learning rate, and other parameters should be set in `samples/coco.py` or mrcnn/config.py
     In house model attempt at the Xview2 challenge. - Located within Baseline folder
-    
+## Instructions:
+
+**Download the data from:**
+- https://xview2.org/dataset
+
+**Run setup file:**
+- Run python3 setup.py install
+
+**Run annotations.py:**
+- Reads the json files and converts them into coco format annotations.
+
+**Download pre trained coco weights for initial training**
+
+**Run coco.py for training**
+- Trains Dataset.
+- Hyper-Parameter tuning to improve detection.
+
+**Run test_images to detect, validate and visualize test dataset**
 
 </details>
 <details>
