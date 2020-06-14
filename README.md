@@ -242,6 +242,7 @@ The training schedule, learning rate, and other parameters should be set in `sam
 - Hyper-Parameter tuning to improve detection.
 
 **Run test_images to detect, validate and visualize test dataset**
+- Green for no damage and Red for destruction
 
 </details>
 <details>
