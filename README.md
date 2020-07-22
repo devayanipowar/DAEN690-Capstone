@@ -1,6 +1,6 @@
 # Natural Disaster Geospatial Damage Assessment
 #### DAEN 690 Spring 2020 
-#### Billy Ermlick, Nick Newman, Devayani Pawar, Tyler Richardett 
+#### Billy Ermlick, Devayani Pawar, Nick Newman, Tyler Richardett 
 
 -----
 
@@ -8,6 +8,9 @@
 When a natural disaster occurs, damaged regions rely on timely damage assessments to receive relief. Currently, this is a slow and laborious process, during which groups such as the Federal Emergency Management Agency (FEMA) conduct on-the-ground evaluations to form fiscal estimates. This project attempts to expedite relief efforts by applying computer vision algorithms to satellite images to quickly and accurately estimate physical and fiscal damage caused by natural disasters. The data used for this analysis consists of satellite images from six types of natural disasters gathered from the xBD dataset provided by the Defense Innovation Unit. Modeling efforts include the use of connected UNets and Mask RCNN for building localization and damage classification, with a pixel-based financial model capable of outputting financial costs according to the United States National Grid (USNG) coordinate system. A proof of concept web application is presented to summarize the results of the analysis. This application provides an efficient method for fiscal evaluation and can enable aid to be rapidly provided to areas in need.
 
 Data: https://xview2.org/
+
+## Presentation:
+A full Presentation of the Project is found in [Documentation/DAEN 690 PowerPoint/DAEN690.pptx]
 
 ## Application Demo:
 Estimated financial cost of damage caused by a natural disaster is provided above according to USNG coordinates. Top left image is an image of a disaster area before a disaster, top right image is the image of the same area after the disaster. Bottom left image is the damage predicted by the CV model. Bottom right is an animation of the financial cost of the damage on a pixel-by-pixel level according to the United States National Grid coordinate system.
@@ -38,15 +41,14 @@ Estimated financial cost of damage caused by a natural disaster is provided abov
   </tr>
 </table>
 
-A full video of the application is found in [/Documentation/Media/ApplicationVideo.mp4](/Documentation/Media/ApplicationVideo.mp4). The process works by uploading a satellite image of a location before and after a disaster. The user will also input the latitude and longitude of the corners of the image and submit this input. A computer vision algorithm will run and detect building locations and damage level on a scale from 0-3 (no damage, minor, major, distroyed) for each pixel in the images. These pixel values will then be utilized to plot damage costs according to the United States National Grid in an interactive application. Further details can be found in [/Documentation/](/Documentation/). 
+(/Documentation/Media/ApplicationVideo.mp4). The process works by uploading a satellite image of a location before and after a disaster. The user will also input the latitude and longitude of the corners of the image and submit this input. A computer vision algorithm will run and detect building locations and damage level on a scale from 0-3 (no damage, minor, major, distroyed) for each pixel in the images. These pixel values will then be utilized to plot damage costs according to the United States National Grid in an interactive application. Further details can be found in [/Documentation/](/Documentation/). 
 
-Application is currently hosted here: <http://test-env.eba-6qua3x4j.us-east-1.elasticbeanstalk.com/>
 
 ## Xview2 Large-Scale Visualization
 
 This is a large scale visualization of a single disaster in the Xview2 dataset. A centroid based approach is taken instead of a pixel based financial model for computational purposes.
 
-An interaction version is currently hosted here: https://ermlickw.github.io/
+
 <div style="text-align:center">
 <img alt="Large Scale Visualization" src="Documentation/Media/BokehPlot.gif" width="500" height="500"/>
 </div>
@@ -107,7 +109,7 @@ Open http://127.0.0.1:5000/ to view application.
 
 </details>
 <details>
-    <summary> <b>Nick Model</b> </summary>
+    <summary> <b>Unet Model</b> </summary>
 
 In house model attempt at the Xview2 challenge. View folder for more information.
 
@@ -182,15 +184,7 @@ In house model attempt at the Xview2 challenge. View folder for more information
     - sqm\_polygons.py -> multiprocessing for determining the squarefootage / m^2 for each building in Xview2
 
 </details>
-<details>
-    <summary> <b>Xview2unet</b> </summary>
 
-     Picked this up from another group to implement minimum viable product (MVP). We trained their model and uploaded our 
-     checkpoints to the repo.  
-
-     https://github.com/canktech/xview2unet
-
-</details>
 <details>
     <summary> <b>Mask RCNN</b> </summary>
 
@@ -202,7 +196,7 @@ In house model attempt at the Xview2 challenge. View folder for more information
 * ([model.py](Mask_RCNN/mrcnn/model.py), [utils.py](Mask_RCNN/mrcnn/utils.py), [config.py](Mask_RCNN/mrcnn/config.py)): These files contain the  Mask R-CNN implementation.
 
 
-* [test_images.ipynb](Mask_RCNN/samples/coco/test_images.ipynb). This notebook visualizes the test detection and metrics evaluation.
+* [test_images.ipynb](/Mask_RCNN/samples/test_images.ipynb). This notebook visualizes the test detection and metrics evaluation. You can visualize the Ground Truth and the Predicted Detection after training the model here.
 
 
 ## Training on MS COCO
