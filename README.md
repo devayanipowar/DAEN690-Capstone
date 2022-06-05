@@ -10,7 +10,7 @@ When a natural disaster occurs, damaged regions rely on timely damage assessment
 Data: https://xview2.org/
 
 ## Presentation:
-A full Presentation of the Project is found in [Documentation/DAEN 690 PowerPoint/DAEN690.pptx]
+A full Presentation of the Project is found in [here](Documentation/DAEN  690 PowerPoint/DAEN690.pdf)
 
 ## Application Demo:
 Estimated financial cost of damage caused by a natural disaster is provided above according to USNG coordinates. Top left image is an image of a disaster area before a disaster, top right image is the image of the same area after the disaster. Bottom left image is the damage predicted by the CV model. Bottom right is an animation of the financial cost of the damage on a pixel-by-pixel level according to the United States National Grid coordinate system.
@@ -41,7 +41,7 @@ Estimated financial cost of damage caused by a natural disaster is provided abov
   </tr>
 </table>
 
-(/Documentation/Media/ApplicationVideo.mp4). The process works by uploading a satellite image of a location before and after a disaster. The user will also input the latitude and longitude of the corners of the image and submit this input. A computer vision algorithm will run and detect building locations and damage level on a scale from 0-3 (no damage, minor, major, distroyed) for each pixel in the images. These pixel values will then be utilized to plot damage costs according to the United States National Grid in an interactive application. Further details can be found in [/Documentation/](/Documentation/). 
+(/Documentation/Media/ApplicationVideo.mp4). The process works by uploading a satellite image of a location before and after a disaster. The user will also input the latitude and longitude of the corners of the image and submit this input. A computer vision algorithm will run and detect building locations and damage level on a scale from 0-3 (no damage, minor, major, distroyed) for each pixel in the images. These pixel values will then be utilized to plot damage costs according to the United States National Grid in an interactive application. Further details can be found in [Documentation](/Documentation/). 
 
 
 ## Xview2 Large-Scale Visualization
