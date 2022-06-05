@@ -10,7 +10,7 @@ When a natural disaster occurs, damaged regions rely on timely damage assessment
 Data: https://xview2.org/
 
 ## Presentation:
-A full Presentation of the Project is found in [here](Documentation/DAEN690PowerPoint/DAEN690.pdf)
+A full Presentation of the Project is found in [here](https://github.com/devayanipowar/DAEN690-Capstone/blob/2088d719cfb15ba024284b71ddfd51c680dde68e/Documentation/DAEN%20%20690%20PowerPoint/DAEN690.pdf)
 
 ## Application Demo:
 Estimated financial cost of damage caused by a natural disaster is provided above according to USNG coordinates. Top left image is an image of a disaster area before a disaster, top right image is the image of the same area after the disaster. Bottom left image is the damage predicted by the CV model. Bottom right is an animation of the financial cost of the damage on a pixel-by-pixel level according to the United States National Grid coordinate system.
